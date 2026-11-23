@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, request, redirect, session
+from flask import Flask, render_template_string, request, redirect, session, send_from_directory
 import sqlite3, os, random
 from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
