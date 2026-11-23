@@ -460,7 +460,7 @@ def ver_contas():
         html+=f"<div style='border:1px solid #ccc;padding:10px;margin:10px;border-radius:10px'>Nome: {ponto_status(dict(t))} {t['nome']}<br>Loja: {t['nome_loja']}<br>Telefone: [{t['telefone_ligacao']}]<br>Senha: [{t['senha']}]<br>Estrelas: {stars(m)} {m} ({total})</div>"
     html+="</div><a href='/admin'><button class='btn'>Voltar</button></a></div></div>"; return html
 @app.route("/logout")
-def logout(): session.clear(); return redirect("/")
+def logout(): session.clear(); return redirect("/login")
 def get_cart_dict(): return session.get("carrinho_dict",{})
 def top_lojas_fn():
     c=db(); rows=c.execute("SELECT DISTINCT parceiro_id, nome_loja FROM produtos WHERE status='aprovado'").fetchall(); c.close(); out=[]
