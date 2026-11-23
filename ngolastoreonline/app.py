@@ -463,7 +463,7 @@ def ver_contas():
 def logout(): session.clear(); return redirect("/login")
 @app.route("/favicon.ico")
 def favicon():
-     return send_from_directory("static","capa.jpg", mimetype="image/jpeg")
+     return send_from_directory("static","icone.jpg", mimetype="image/jpeg")
 def get_cart_dict(): return session.get("carrinho_dict",{})
 def top_lojas_fn():
     c=db(); rows=c.execute("SELECT DISTINCT parceiro_id, nome_loja FROM produtos WHERE status='aprovado'").fetchall(); c.close(); out=[]
