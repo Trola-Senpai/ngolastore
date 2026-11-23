@@ -93,6 +93,7 @@ def pagina_msg(titulo, texto, botao_texto="/loja", botao_label="Voltar à Loja")
     return render_template_string(CSS + f"<div class='topo'><b>NGOLA <span>STORE</span></b><a href='javascript:voltar()'>⬅ Voltar</a></div><div class='container'><div class='card' style='text-align:center'><div class='check'>✅</div><h2>{titulo}</h2><p>{texto}</p><br><a href='{botao_texto}'><button class='btn'>{botao_label}</button></a></div></div><div style='text-align:center;padding:20px'><button class='btn-outline' onclick=\"sair()\">Sair</button></div><p style='text-align:center;font-size:11px'>© Ngola Store Online</p><script>function sair(){{if(confirm('Queres mesmo sair?')){{alert('Volte sempre');window.close();window.location.href='/logout';}}}}function voltar(){{if(window.history.length>1){{window.history.back();}}else{{window.location.href='/loja';}}}}</script>")
 
 CSS = """
+<meta name= "viewport" content="width=device-width, initial-scale=1">
 <style>
 *{box-sizing:border-box;font-family:Arial,sans-serif}body{margin:0;background:#f2f2f2}
 a{text-decoration:none!important;color:#111;font-weight:bold}a:hover{opacity:.85}
@@ -122,6 +123,10 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 .pequeno{font-size:11px;color:#666}.comentario{cursor:pointer}
 .chat-input{display:flex;gap:6px;align-items:center}.chat-input input{flex:1}.grampo{font-size:22px;cursor:pointer;background:none;border:none}
 @media(max-width:600px){.grid{grid-template-columns:1fr}.topo{flex-wrap:wrap}.topo b{font-size:18px}}
+img{max-width:100%;heigh:auto}
+.container{padding:10px !important}
+.topo{flex-wrap:wrap}
+.total-grande{font-size:28px !important}
 </style>
 <script>
 function toggle(id){var e=document.getElementById(id);e.style.display=e.style.display=='none'?'block':'none';}
